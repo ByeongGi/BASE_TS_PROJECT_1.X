@@ -9,8 +9,6 @@ export default class SecurityFilter implements Filter {
     {
         console.log("START TIME :" + new Date());
         console.log("SecurityFilter!!!!1");
-        console.log(req.query);
-        let params :any = req.query;
         
     }
 

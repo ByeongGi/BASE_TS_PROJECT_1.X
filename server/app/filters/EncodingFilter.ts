@@ -12,9 +12,7 @@ export default class EncodingFilter implements Filter {
     }
 
     doFilter(req: Request, res: Response) {
-        // Encoding setting 
-        // console.log("START TIME :" + new Date());
-        // console.log("EncodingFilter!!!!1");
+        console.log("EncodingFilter!!!!1");
         req.setEncoding(this.encoding);
         // res.setHeader()
     }

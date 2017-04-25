@@ -2,34 +2,32 @@
 // Import everything from express and assign it to the express variable
 import * as express from 'express';
 import { Request, Response, NextFunction } from 'express';
-
-// Import WelcomeController from controllers entry point
-// import { WelcomeController, ServiceController } from './controllers';
+import { DelegateFilterChain , Filter, SecurityFilter , EncodingFilter, MiddlewareFilter} from './filters';
+import { DispatcherServlet } from './servlet';
+import ServiceController from "./controllers";
 
 import  post  from "./model/postScheme";
-
-
-
-
-import { DelegateFilterChain , Filter, SecurityFilter , EncodingFilter} from './filters';
-import { DispatcherServlet } from './servlet';
-import SeverceController from "./controllers";
-
 
 // Create a new express application instance
 const app: express.Application = express();
 // The port the express app will listen on
 const port: number = process.env.PORT || 3000;
 
-app.use(SeverceController);
-app.use(express.static('build'));
 
-let filterArr = [new SecurityFilter()
-                ,new EncodingFilter()];
+// Static Resouce Mapping 
+app.use( express.static('build') );
 
-/*const filterChain :DelegateFilterChain = new DelegateFilterChain(app,filterArr);
-filterChain.delegate(SeverceController);
-*/
+
+app.use(MiddlewareFilter)
+   .use(ServiceController)
+   .use(MiddlewareFilter);
+
+
+app.use('/', (req:Request, res:Response, next:NextFunction)=>{
+    console.log( "LOG : Middleware 007 !");
+    next();
+});
+
 
 // Serve the application at the given port
 app.listen(port, () => {

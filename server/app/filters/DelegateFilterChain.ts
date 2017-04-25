@@ -12,67 +12,28 @@ import { Request, Response, NextFunction ,Router} from 'express';
  * @author ByeongGiKim
  * @version 0.1
  */
-export default class DelegateFilterChain implements FilterChain {
-    
+ export default class DelegateFilterChain implements FilterChain {
+  
     private filterConfig: FilterConfig;
-    private app : express.Application;
     private filters : Array<Filter>;
-      
-    constructor(app :express.Application, filters:Array<Filter>){
-        this.app = app;
+   
+    constructor(filters:Array<Filter>){
+        
         this.filters = filters;        
     }
     
-    /**
-     * Express의 Router를 받아서 전후 필터링 처리를 할수 있도록 제어권을 넘겨준다.
-     * @param servlet 
-     */
-    public delegate(servlet: Router) :void{
-
-        this.app.all('*',  
-        [  (req:Request, res:Response , next :NextFunction )=>{
-            this.doFilter(req,res);
-            next();
-            }
-        ,   servlet
-        ,  (req:Request, res:Response)=>{
-            this.doFilter(req,res);
-            
-            }
-        ]
-
-    );
-    }
-
-    /**
-     * Filter를 실행한다.
-     * @param req 
-     * @param res 
-     */
-    public doFilter(req: Request, res: Response) : any 
-    {
-        
-      this.internalDoFilter(req, res);
-
-    }
-    /**
-     * 실제적으로 필터를 실행하는 내부 메소드 
-     * @param req 
-     * @param res 
-     */
-    private internalDoFilter(req: Request, res: Response) : any  
-    {
-        let filters = this.filters;
+    public doFilter(req: Request, res: Response) : any {
+       console.log( "LOG : delegate 002 !");       
+       console.log( "LOG : delegate 003 !");     
+        let filters = this.filters; 
         filters.map((filter, index , filters)=>{
             filter.doFilter(req,res);
         });
-        
     }
 
-   public initFilter(filterConfig: FilterConfig)
+    public initFilter(filterConfig: FilterConfig)
     {
         this.filterConfig = filterConfig;
     }
 
 }
-

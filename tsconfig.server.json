@@ -4,7 +4,7 @@
         "outDir" :"build",
         "module": "CommonJS",
         "target": "es6",
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "sourceMap": true,
         "allowJs": true,
         "experimentalDecorators": true,
@@ -16,8 +16,8 @@
         ],
         "moduleResolution": "node"  
     },
-    // "include":"server",
+    "include":["server"],
     "exclude": [
-        "node_modules" ,"client" ,"build"
+        "node_modules" ,"client" ,"build","docs","config","spec","typings"
     ]
 }
