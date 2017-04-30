@@ -8,11 +8,13 @@ import api from "../api/api";
 // Vuex 사용 명시 
 Vue.use(Vuex); 
 
+
+
   
 const store = new Store({
   state: {
     list:[1,2],
-    postList : ''        
+    postList: null
   },
   // vuex의 mutation은 이벤트들과 유사하다.
   // 실제 상태를 수정하고 , 다시 수정한 데이터를 받는 역할 
@@ -30,11 +32,11 @@ const store = new Store({
      
     allPostList (state, allPostList){
       api.then((response)=>{
-        console.log(response);
+        // console.log(response.json());
         return response.json(); 
       }).then((json)=>{   
-          console.log(json);
-        // state.postList = json.text();
+        // console.log(json);  
+        state.postList = json;  
       });
     },    
     allList (state, allList){

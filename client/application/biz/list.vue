@@ -23,7 +23,7 @@ import listImp from './listImp.vue';
 export default class List extends Vue {
          
  private inPutText :string;
- 
+  
  created () {
  // 컴포넌트가 생성될때 호출되는 메소드 
     this.$store.dispatch('getAllProducts')
@@ -39,7 +39,7 @@ export default class List extends Vue {
     
  }
 
-}
+}                  
  
 </script>
 <style lang="scss">     

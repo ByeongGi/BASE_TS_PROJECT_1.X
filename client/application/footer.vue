@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid app-footer">
-    <h2>Footer</h2>  
+    <h2>Footer</h2>
+    <p> ByeongGiKim 2017-04-30 </p>  
   </div>
 </template>
 <style lang="scss">     
