@@ -3,6 +3,7 @@ import { Filter } from './Filter';
 import { FilterConfig } from './FilterConfig';
 import * as express from 'express';
 import { Request, Response, NextFunction ,Router} from 'express';
+import { Log }from '../anonotation';
 /**
  * DelegateFilterChain
  *  
@@ -18,13 +19,11 @@ import { Request, Response, NextFunction ,Router} from 'express';
     private filters : Array<Filter>;
    
     constructor(filters:Array<Filter>){
-        
         this.filters = filters;        
     }
     
+    @Log('/')                   
     public doFilter(req: Request, res: Response) : any {
-       console.log( "LOG : delegate 002 !");       
-       console.log( "LOG : delegate 003 !");     
         let filters = this.filters; 
         filters.map((filter, index , filters)=>{
             filter.doFilter(req,res);

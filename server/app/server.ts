@@ -2,7 +2,7 @@
 // Import everything from express and assign it to the express variable
 import * as express from 'express';
 import { Request, Response, NextFunction } from 'express';
-import { DelegateFilterChain , Filter, SecurityFilter , EncodingFilter, MiddlewareFilter} from './filters';
+import { MiddlewareFilter } from './filters';
 import { DispatcherServlet } from './servlet';
 import ServiceController from "./controllers";
 
