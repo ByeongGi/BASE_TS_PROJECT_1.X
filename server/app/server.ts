@@ -5,19 +5,17 @@ import { Request, Response, NextFunction } from 'express';
 import { DelegateFilterChain , Filter, SecurityFilter , EncodingFilter, MiddlewareFilter} from './filters';
 import { DispatcherServlet } from './servlet';
 import ServiceController from "./controllers";
-
-import  post  from "./model/postScheme";
-
+import DBConnnecter  from "./db/DBConnnecter";
 // Create a new express application instance
 const app: express.Application = express();
 // The port the express app will listen on
 const port: number = process.env.PORT || 3000;
 
-
+// DB Connnection 
+DBConnnecter();
+                   
 // Static Resouce Mapping 
-app.use( express.static('build') );
-
-
+app.use( express.static('build'));
 app.use(MiddlewareFilter)
    .use(ServiceController)
    .use(MiddlewareFilter);

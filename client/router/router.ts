@@ -1,23 +1,22 @@
 import Vue from "vue";
 import VueRouter from 'vue-router';
-import {list ,post}  from '../application';
-
+import {list ,post, customList}  from '../application';
     
-Vue.use(VueRouter);
-
-// const Foo = { template: '<div>foo</div>' }  
-const Bar = { template: '<div>bar</div>' }
-
+  
+    
+Vue.use(VueRouter);    
+      
+           
 const routes = [  
+    { path: '/bar', component: customList },
     { path: '/foo', component: post },
-    { path: '/bar', component: Bar },
     { path: '/list', component: list }
-];
+];  
 
 // SPA 개발시에 자체 Vue에서 제공하는 VueRouter 객체
 const router: VueRouter = new VueRouter({
     routes
-});                   
+});                     
 
 
 export default router;

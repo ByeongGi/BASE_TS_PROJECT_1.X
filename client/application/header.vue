@@ -4,12 +4,12 @@
       <a class="navbar-brand"
          href="#">Navbar</a>
         
-      
+           
     </nav>
   </div>
 </template>
 <style lang="scss">
-.navbar {
+.navbar {   
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   background-color: #3097D1
