@@ -12,4 +12,3 @@ export interface Filter {
     doFilter(req: Request, res: Response): any;
 }
 
-

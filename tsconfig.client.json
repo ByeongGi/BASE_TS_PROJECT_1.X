@@ -1,8 +1,8 @@
 { 
     "compilerOptions": {
         "typeRoots" : ["./node_modules/@types"],
-        "module": "commonjs",
         "module": "es2015",
+        "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": true,
@@ -11,10 +11,9 @@
         "allowSyntheticDefaultImports": true,
         "lib": [
             "dom",       
-            "es5"
-            // "es2015.promise" // 이슈 대상 
-        ],
-        "moduleResolution": "node"  
+            "es5",
+             "es2015.promise" // 이슈 대상 
+        ]
     },
     "exclude": ["node_modules" ,"build"]
    

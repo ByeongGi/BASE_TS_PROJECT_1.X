@@ -7,7 +7,7 @@ export default class SecurityFilter implements Filter {
     filterConfig: FilterConfig;
     doFilter(req: Request, res: Response) 
     {
-        console.log("START TIME :" + new Date());
+        // console.log("START TIME :" + new Date());
         console.log("SecurityFilter!!!!1");
         
     }

@@ -9,8 +9,8 @@ export default function Log(path:any) {
             // convert method arguments to string
             
             var a = args.map(a => {
-                console.log(`LOG ---- >>> (${a})` );
-                console.log(a);
+               // console.log(`LOG ---- >>> (${a})` );
+               // console.log(a);
                 
                 return a; 
                 }).join();
@@ -25,15 +25,9 @@ export default function Log(path:any) {
             return result;    
         };
         // return edited descriptor
+         
         return descriptor;
-  
 
-        // console.log("------------------LOG ----------------------------------");
-        // console.log("-----------------------"+new Date().toLocaleDateString());
-        // console.log(target);
-        // console.log(propertyKey);
-        // console.log(descriptor);
-        // console.log("------------------LOG ----------------------------------");
     }
 
 }

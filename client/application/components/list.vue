@@ -17,12 +17,6 @@
 <script lang="ts">
 import Vue from 'vue'; // 명시적으로 Import 해야함 
 
-
-
-
-
-
-
 </script>          
 <style lang="scss" scope>
 

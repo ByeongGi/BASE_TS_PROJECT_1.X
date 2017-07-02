@@ -22,7 +22,7 @@ import { Log }from '../anonotation';
         this.filters = filters;        
     }
     
-    @Log('/')                   
+            
     public doFilter(req: Request, res: Response) : any {
         let filters = this.filters; 
         filters.map((filter, index , filters)=>{

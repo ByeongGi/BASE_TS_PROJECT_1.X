@@ -5,6 +5,8 @@ export default function RequestMapping(path:any) {
         console.log(target);
         console.log(propertyKey);
         console.log(descriptor);
+
+        return descriptor;
     }
 
 }

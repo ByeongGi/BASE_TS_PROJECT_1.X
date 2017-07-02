@@ -29,14 +29,14 @@ module.exports = {
         use: "source-map-loader"
       },
       {
-        test: /\.ts?$/,
+        test: /\.tsx?$/, 
         loader: 'ts-loader',
         exclude: /node_modules|vue\/client/,
         options: {
           appendTsSuffixTo: [/\.vue$/]
         }
          
-      },
+      }, 
       {
         test: /\.s[a|c]ss$/,
         loader: 'style!css!sass'
@@ -67,10 +67,10 @@ module.exports = {
         loader: 'file-loader',
       },
     ]
-  },
+  }, 
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.common.js'
+      'vue$': 'vue/dist/vue.esm.js'      
     },
     extensions: [".tsx", ".ts", ".js", ".vue"]
   },

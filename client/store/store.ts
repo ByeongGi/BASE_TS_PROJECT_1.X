@@ -31,13 +31,13 @@ const store = new Store({
     },
      
     allPostList (state, allPostList){
-      api.then((response)=>{
-        // console.log(response.json());
-        return response.json(); 
-      }).then((json)=>{   
+      api().then((response):any =>{
+          return response.json(); 
+      }).then((json) :any =>{   
         // console.log(json);  
         state.postList = json;  
-      });
+      })
+      .catch((error) => console.warn("fetch error:", error));
     },    
     allList (state, allList){
        state.list = allList;
