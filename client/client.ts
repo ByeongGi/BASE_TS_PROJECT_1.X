@@ -1,4 +1,4 @@
-import Vue from 'vue'; // 
+import Vue from 'vue';
 import App from './application/app.vue';
 import Header from './application/header.vue';
 import Footer from './application/footer.vue';

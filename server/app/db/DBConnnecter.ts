@@ -1,7 +1,5 @@
 import { connect } from "mongoose";
 
-
-
 function dbConnect(){
 
     const dbUrl = 'mongodb://localhost:32001/kira'; 
