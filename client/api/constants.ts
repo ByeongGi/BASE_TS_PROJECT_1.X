@@ -1,3 +1,9 @@
 
+/**
+ * COSTANT VARIABLES
+ *  
+ */
+export const BASE_URL ="http://localhost:3000";
 
-const baseUrl = \http://{}:3000/\; 
+
+

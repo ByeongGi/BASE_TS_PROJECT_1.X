@@ -16,7 +16,7 @@ const reqHandlers =
         reqhandler : (req: Request, res: Response , next:NextFunction) =>{
             
              res.header("Content-Type", "application/json; charset=utf-8");
-             let cursor = post.find({}).sort('desc').exec((err,data)=>{
+             let cursor = post.find({}).sort('asc').exec((err,data)=>{
                 // console.log(data);
                 res.json(data);
             });
@@ -43,7 +43,7 @@ const reqHandlers =
 
             //res.sendFile(__dirname+ '/index.html');     
             //  res.send("service call!");
-            console.log("service end" + test );
+            console.log("service end" + test ); 
             console.log("====================================================="); 
     
         }
@@ -62,7 +62,7 @@ const reqHandlers =
     }
 
 ];
-
+ 
 reqHandlers.forEach((elm)=>{
     router.use(elm.url,elm.reqhandler);
 });

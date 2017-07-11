@@ -1,9 +1,8 @@
 
-
-const baseUrl = "http://localhost:3000/"; 
+import { BASE_URL } from "./constants";
 
 function api(){
-    let url = 'http://localhost:3000/postall';
+    let url = `${BASE_URL}/postall`;
     let apiHeaders = new Headers();
 
     apiHeaders.append('Accept', 'application/json');
